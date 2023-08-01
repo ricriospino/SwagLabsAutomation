@@ -16,7 +16,7 @@ public class TestLogout4 extends TestBase {
 @Given("^el usuario debe estar logueado$")
 public void elUsuarioDebeEstarLogueado() throws Throwable {
 	
-	properties.load(new FileReader("D:\\CursoJava\\workspace_seleniumUdemy\\LabMontAutomatizado\\src\\test\\java\\resurces\\config.properties"));
+	properties.load(new FileReader("C:\\Users\\PC\\git\\SwagLabsAutomation\\src\\test\\java\\resurces\\config.properties"));
 	
 	driver.findElement(loginPage.getInputUserName()).sendKeys(properties.getProperty("usuario"));			
     driver.findElement(loginPage.getInputPassword()).sendKeys(properties.getProperty("contrasena"));
