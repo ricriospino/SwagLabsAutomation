@@ -34,7 +34,7 @@ public class Hooks {
 	public void Abrir() throws  IOException {
 		
 		Properties properties = new Properties();
-		properties.load(new FileReader("D:\\CursoJava\\workspace_seleniumUdemy\\LabMontAutomatizado\\src\\test\\java\\resurces\\config.properties"));
+		properties.load(new FileReader("C:\\Users\\PC\\git\\SwagLabsAutomation\\src\\test\\java\\resurces\\config.properties"));
 		
 		numberofCase++;
 		driverManager = DriverManagerFactory.getManager(DriverType.CHROME); 

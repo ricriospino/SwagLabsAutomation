@@ -23,6 +23,12 @@ Scenario: No puedo hacer login por campo password null
   And hace clic en el botón Login por tercera vez
   Then el usuario debería ver el mensaje de error Epic sadface: Password is required en rojo.
   
+@browser
+Scenario: No puedo hacer login por usuario bloqueado
+	When que el usuario ingresa cuenta bloqueada usuario y clave
+	And  clic en el boton Login 
+	Then debera haber dentro de la pagina login un mensaje "Epic sadface: Sorry, this user has been locked out." en rojo
+  
   
   
   

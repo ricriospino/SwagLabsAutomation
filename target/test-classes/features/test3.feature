@@ -6,7 +6,7 @@ Feature: Realizar una compra exitosa
 Background:
   Given el usuario está logueado
     And el usuario ha agregado al menos un item al carrito
-@browser
+@browser 
 Scenario Outline: Comprar productos
   Given el usuario se encuentra en la página de checkout Your Information
   When el usuario completa todos los campos solicitados de información del cliente

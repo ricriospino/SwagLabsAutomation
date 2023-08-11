@@ -1,5 +1,8 @@
 package SeleniumCode;
 
+import java.io.FileReader;
+import java.util.Properties;
+
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 
@@ -29,7 +32,7 @@ public class TestLoginFail5 extends TestBase{
 	public void haceClicEnElBotónLogin() throws Throwable {
 		
 		driver.findElement(loginPage.getBotonLogin()).submit();
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 	}
 
 	@Then("^el usuario debería ver el mensaje de error \"([^\"]*)\" en rojo\\.$")
@@ -37,7 +40,7 @@ public class TestLoginFail5 extends TestBase{
 		
 		WebElement mensajeErrorObtenido = driver.findElement(loginPage.getMessageError());
 		Assert.assertEquals(mensajeErrorEsperado, mensajeErrorObtenido.getText());
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 	}
 
 	@When("^el usuario ingresa el nombre de usuario null y la contrasena correcta$")
@@ -45,14 +48,14 @@ public class TestLoginFail5 extends TestBase{
 		
 		driver.findElement(loginPage.getInputUserName()).sendKeys("");
 		driver.findElement(loginPage.getInputPassword()).sendKeys(loginPage.getPasswordIncorrecto());  
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 	}
 
 	@When("^hace clic en el botón Login por segunda vez$")
 	public void haceClicEnElBotónLoginPorSegundaVez() throws Throwable {
 		
 		driver.findElement(loginPage.getBotonLogin()).submit();	  
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 	}
 
 	@Then("^el usuario debería ver el mensaje de error Epic sadface: Username is required en rojo\\.$")
@@ -60,7 +63,7 @@ public class TestLoginFail5 extends TestBase{
 		
 		WebElement mensajeErrorObtenido = driver.findElement(loginPage.getMessageError());
 		Assert.assertEquals(loginPage.getMensajeUserNull(), mensajeErrorObtenido.getText());	
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 	}
 
 	@When("^el usuario ingresa el nombre de usuario correcto y la contrasena null$")
@@ -68,14 +71,14 @@ public class TestLoginFail5 extends TestBase{
 		
 		driver.findElement(loginPage.getInputUserName()).sendKeys(loginPage.getUsuarioIncorrecto());
 		driver.findElement(loginPage.getInputPassword()).sendKeys("");  	
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 	}
 
 	@When("^hace clic en el botón Login por tercera vez$")
 	public void haceClicEnElBotónLoginPorTerceraVez() throws Throwable {
 		
 		driver.findElement(loginPage.getBotonLogin()).submit();	   
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 	}
 
 	@Then("^el usuario debería ver el mensaje de error Epic sadface: Password is required en rojo\\.$")
@@ -83,8 +86,34 @@ public class TestLoginFail5 extends TestBase{
 		
 		WebElement mensajeErrorObtenido = driver.findElement(loginPage.getMessageError());
 		Assert.assertEquals(loginPage.getMensajePasswordNull(), mensajeErrorObtenido.getText());	
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 	
+	}
+	@When("^que el usuario ingresa cuenta bloqueada usuario y clave$")
+	public void queElUsuarioIngresaCuentaBloqueadaUsuarioYClave() throws Throwable {
+		
+		Properties properties = new Properties();
+		properties.load(new FileReader("C:\\Users\\PC\\git\\SwagLabsAutomation\\src\\test\\java\\resurces\\config.properties"));
+		
+		driver.findElement(loginPage.getInputUserName()).sendKeys(properties.getProperty("usuario_bloqueado"));			
+	    driver.findElement(loginPage.getInputPassword()).sendKeys(properties.getProperty("contrasena"));
+	   // Thread.sleep(2000);
+	   
+	}
+
+	@When("^clic en el boton Login$")
+	public void clicEnElBotonLogin() throws Throwable {
+		
+		driver.findElement(loginPage.getBotonLogin()).submit();    
+		//Thread.sleep(2000);
+	}
+
+	@Then("^debera haber dentro de la pagina login un mensaje \"([^\"]*)\" en rojo$")
+	public void deberaHaberDentroDeLaPaginaLoginUnMensajeEnRojo(String mensajeEsperado) throws Throwable {
+		
+		WebElement usuarioBloqueado = driver.findElement(loginPage.getMessageError());
+		Assert.assertEquals(mensajeEsperado , usuarioBloqueado.getText());
+		//Thread.sleep(2000);
 	}
 	
 

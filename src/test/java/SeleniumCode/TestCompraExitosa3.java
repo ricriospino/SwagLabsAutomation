@@ -3,20 +3,22 @@ package SeleniumCode;
 import static org.junit.Assert.assertEquals;
 
 import java.io.FileReader;
+import java.sql.ResultSet;
 import java.util.Properties;
 
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 
+import api.DataApi;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import db.DataBaseConetion;
 
 public class TestCompraExitosa3 extends TestBase  {
 	
 	 Properties properties = new Properties();
-	
-	
+	 DataApi dataApi = new DataApi();
 	
 	@Given("^el usuario está logueado$")
 	public void elUsuarioEstáLogueado() throws Throwable {
@@ -43,7 +45,7 @@ public class TestCompraExitosa3 extends TestBase  {
 	public void elUsuarioSeEncuentraEnLaPáginaDeCheckoutYourInformation() throws Throwable {
 		
 		 driver.findElement(cartPage.getBotonCheckout()).click();
-		 //Thread.sleep(5000);
+		 //Thread.sleep(2000);
 		 
 		 WebElement tituloPaginaCheckOutInfo = driver.findElement(checkoutYourInformationPage.getTituloCheckoutInfo());
 		 assertEquals(checkoutYourInformationPage.getTituloEsperadoInfo(), tituloPaginaCheckOutInfo.getText());
@@ -51,12 +53,20 @@ public class TestCompraExitosa3 extends TestBase  {
 
 	@When("^el usuario completa todos los campos solicitados de información del cliente$")
 	public void elUsuarioCompletaTodosLosCamposSolicitadosDeInformaciónDelCliente() throws Throwable {
-	    
-		driver.findElement(checkoutYourInformationPage.getInputFirstName()).sendKeys(properties.getProperty("first_name"));			
-	    driver.findElement(checkoutYourInformationPage.getInputLastName()).sendKeys(properties.getProperty("last_name"));
-	    driver.findElement(checkoutYourInformationPage.getInputZipName()).sendKeys(properties.getProperty("zip"));
-	    //Thread.sleep(5000);
-		
+		//String scenario ="rewardscard";
+		ResultSet rs = DataBaseConetion.getCredentials();
+				
+		while(rs.next()) {
+				//Thread.sleep(2000);
+				driver.findElement(checkoutYourInformationPage.getInputFirstName()).sendKeys(rs.getString("username"));		
+				System.out.println(rs.getString("username"));
+				driver.findElement(checkoutYourInformationPage.getInputLastName()).sendKeys(rs.getString("password"));
+				System.out.println(rs.getString("password"));
+				driver.findElement(checkoutYourInformationPage.getInputZipName()).sendKeys(properties.getProperty("zip"));	
+				
+				//Thread.sleep(2000);			
+		}
+		rs.close();				
 	}
 
 	@When("^hace clic en el botón \"([^\"]*)\"$")
@@ -66,7 +76,7 @@ public class TestCompraExitosa3 extends TestBase  {
 		Assert.assertNotNull(botonContinue);
 		
 		botonContinue.click();
-		//Thread.sleep(5000);
+		//Thread.sleep(2000);
 	    
 	}
 
@@ -113,7 +123,7 @@ public class TestCompraExitosa3 extends TestBase  {
 	public void haceClicEnElBoton(String botonFinishData)throws Throwable {
 		
 		driver.findElement(checkoutOverviewPage.getBotonFinish()).click();
-		//Thread.sleep(5000);
+		//Thread.sleep(2000);
 		
 	}
 
@@ -122,7 +132,7 @@ public class TestCompraExitosa3 extends TestBase  {
 		
 		WebElement compraExitosa = driver.findElement(checkoutComplete.getTituloFinish());
 		Assert.assertEquals(checkoutComplete.getTituloEsperadoFinish(), compraExitosa.getText());
-		//Thread.sleep(5000);
+		//Thread.sleep(2000);
 	}
 
 	@Then("^el usuario debería ver un mensaje de confirmación de la compra$")
@@ -130,7 +140,7 @@ public class TestCompraExitosa3 extends TestBase  {
 		
 		WebElement mensajeConfirmacion = driver.findElement(checkoutComplete.getTextoConfirmacion());
 		Assert.assertEquals(checkoutComplete.getTextoEsperadoComplet(), mensajeConfirmacion.getText());
-		//Thread.sleep(5000);
+		//Thread.sleep(2000);
 	}
 
 }
