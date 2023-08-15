@@ -17,6 +17,7 @@ import java.util.logging.Logger;
 		plugin = {"json:test/report/cucumber_report.json"},
 		snippets = CAMELCASE,
 		tags = {"@browser"}
+		
 	// ~	
 		)
 public class TestRunner {
