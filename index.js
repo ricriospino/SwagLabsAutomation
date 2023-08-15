@@ -20,6 +20,7 @@ report.generate({
     platform: {
       name: "Windows",
       version: "10",
+     
     },
   },
   customData: {
