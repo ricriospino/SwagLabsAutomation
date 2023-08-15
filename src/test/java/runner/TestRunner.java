@@ -18,7 +18,7 @@ import java.util.logging.Logger;
 		glue= {"SeleniumCode"},// es la carpeta  donde esta hooks
 		plugin = {"json:test/report/cucumber_report.json"},
 		snippets = CAMELCASE,
-		tags = {"@browser","@a"}
+		tags = {"@browser"}
 	// ~	
 		)
 public class TestRunner {
@@ -41,7 +41,4 @@ public class TestRunner {
 			
 		}
 	}
-	
-	
-
 }

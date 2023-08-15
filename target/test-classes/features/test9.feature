@@ -1,13 +1,30 @@
 Feature: Realizar una compra exitosa con data usuario de Base de datos Mysql
-
-  Como usuario quiero poder registrarme y agregar un producto para posteriormente poder comprarlo
+	
+	Descripción: 
+	<div>
+		<p>
+			<strong>Realizar una compra exitosa con data usuario de Base de datos Mysql</strong>:  Como usuario quiero poder 
+			registrarme y agregar un producto para posteriormente poder comprarlo
+		</p>
+		<p>
+			<strong>Resultado esperado</strong>: Realizo la compra satisfactoriamente
+		</p>
+		<p>
+			<strong>Tipo de característica</strong>: Data Mysql
+		</p>
+		<p>
+			<strong>Comentarios</strong>: La prueba cubre operaciones de base de datos de manera exitosa
+		</p>
+	</div>
+	
+ 
 
 Background:
 
     Given el usuario BD está logueado
     And el usuario BD ha agregado al menos un item al carrito
 
-@browser @a
+@browser 
 Scenario: Comprar productos con datos de usuario de una BD
   Given el usuario BD se encuentra en la página de checkout Your Information
   When el usuario BD completa todos los campos solicitados de información del cliente

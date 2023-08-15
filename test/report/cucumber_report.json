@@ -3,43 +3,10 @@
     "line": 1,
     "elements": [
       {
-        "line": 5,
-        "name": "",
-        "description": "",
-        "type": "background",
-        "keyword": "Background",
-        "steps": [
-          {
-            "result": {
-              "duration": 776389500,
-              "status": "passed"
-            },
-            "line": 7,
-            "name": "el usuario BD está logueado",
-            "match": {
-              "location": "TestCompraExitosaByBD9.elUsuarioBDEstáLogueado()"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 205422700,
-              "status": "passed"
-            },
-            "line": 8,
-            "name": "el usuario BD ha agregado al menos un item al carrito",
-            "match": {
-              "location": "TestCompraExitosaByBD9.elUsuarioBDHaAgregadoAlMenosUnItemAlCarrito()"
-            },
-            "keyword": "And "
-          }
-        ]
-      },
-      {
         "before": [
           {
             "result": {
-              "duration": 22925250000,
+              "duration": 6281070500,
               "status": "passed"
             },
             "match": {
@@ -47,14 +14,157 @@
             }
           }
         ],
-        "line": 11,
-        "name": "Comprar productos con datos de usuario de una BD",
+        "line": 15,
+        "name": "Ingresar a la pagina Home para poder loguerme  (Happy path )",
         "description": "",
-        "id": "realizar-una-compra-exitosa-con-data-usuario-de-base-de-datos-mysql;comprar-productos-con-datos-de-usuario-de-una-bd",
+        "id": "login;ingresar-a-la-pagina-home-para-poder-loguerme--(happy-path-);;2",
         "after": [
           {
             "result": {
-              "duration": 1183424100,
+              "duration": 407708800,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.Cerrar(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 349815000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "El usuario se encuentra en la Pagina login",
+            "match": {
+              "location": "TestLogin1.elUsuarioSeEncuentraEnLaPaginaLogin()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 286673600,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "ingresa su nombre de \"standard_user\" y \"secret_sauce\" válidos",
+            "match": {
+              "arguments": [
+                {
+                  "val": "standard_user",
+                  "offset": 22
+                },
+                {
+                  "val": "secret_sauce",
+                  "offset": 40
+                }
+              ],
+              "location": "TestLogin1.ingresaSuNombreDeYVálidos(String,String)"
+            },
+            "matchedColumns": [
+              0,
+              1
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 104006200,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "hace clic en el botón login",
+            "match": {
+              "location": "TestLogin1.haceClicEnElBotónLogin()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 62737800,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "debería ser redirigido a la página de Home Swag Labs",
+            "match": {
+              "location": "TestLogin1.deberíaSerRedirigidoALaPáginaDeHomeSwagLabs()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 4,
+            "name": "@browser"
+          }
+        ]
+      }
+    ],
+    "name": "Login",
+    "description": "Como usuario quiero poder logearme para poder ingresar a la pagina con mi cuenta.",
+    "id": "login",
+    "keyword": "Feature",
+    "uri": "test.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 6,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 30377300,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "un usuario se encuentra en la pagina login",
+            "match": {
+              "location": "TestAgregarProductoyRemover2.unUsuarioSeEncuentraEnLaPaginaLogin()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 390677400,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "ingresa credenciales validas",
+            "match": {
+              "location": "TestAgregarProductoyRemover2.ingresaCredencialesValidas()"
+            },
+            "keyword": "When "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 4001908700,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.Abrir()"
+            }
+          }
+        ],
+        "line": 12,
+        "name": "Agregar producto de mayor valor al carrito",
+        "description": "",
+        "id": "agregar-producto-de-mayor-valor-al-carrito-y-verificar-para-despues-remover;agregar-producto-de-mayor-valor-al-carrito",
+        "after": [
+          {
+            "result": {
+              "duration": 326051600,
               "status": "passed"
             },
             "match": {
@@ -67,10 +177,1306 @@
         "steps": [
           {
             "result": {
-              "duration": 110719800,
+              "duration": 97627800,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "estoy en la página de inicio",
+            "match": {
+              "location": "TestAgregarProductoyRemover2.estoyEnLaPáginaDeInicio()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 182643100,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "busco el producto de mayor valor",
+            "match": {
+              "location": "TestAgregarProductoyRemover2.buscoElProductoDeMayorValor()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 81453900,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "hago clic en el botón de agregar al carrito",
+            "match": {
+              "location": "TestAgregarProductoyRemover2.hagoClicEnElBotónDeAgregarAlCarrito()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 34086300,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "el logo carrito de la parte superior debera tener un numero",
+            "match": {
+              "location": "TestAgregarProductoyRemover2.elLogoCarritoDeLaParteSuperiorDeberaTenerUnNumero()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 125229100,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "verificar en la pagina cart si el producto se agrego correctamente",
+            "match": {
+              "location": "TestAgregarProductoyRemover2.verificarEnLaPaginaCartSiElProductoSeAgregoCorrectamente()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 60024500,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "el usuario decide remover el producto del carrito",
+            "match": {
+              "location": "TestAgregarProductoyRemover2.elUsuarioDecideRemoverElProductoDelCarrito()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 33144900,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "verificar si el producto se removio exitosamente",
+            "match": {
+              "location": "TestAgregarProductoyRemover2.verificarSiElProductoSeRemovioExitosamente()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 11,
+            "name": "@browser"
+          }
+        ]
+      }
+    ],
+    "name": "agregar producto de mayor valor al carrito y verificar para despues remover",
+    "description": "\r\nComo usuario quiero poder agregar un producto de mayor valor al carrito para despues remover el producto",
+    "id": "agregar-producto-de-mayor-valor-al-carrito-y-verificar-para-despues-remover",
+    "keyword": "Feature",
+    "uri": "test2.feature"
+  },
+  {
+    "line": 2,
+    "elements": [
+      {
+        "line": 6,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 358178900,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "el usuario está logueado",
+            "match": {
+              "location": "TestCompraExitosa3.elUsuarioEstáLogueado()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 195313900,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "el usuario ha agregado al menos un item al carrito",
+            "match": {
+              "location": "TestCompraExitosa3.elUsuarioHaAgregadoAlMenosUnItemAlCarrito()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 4281108900,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.Abrir()"
+            }
+          }
+        ],
+        "line": 26,
+        "name": "Comprar productos",
+        "description": "",
+        "id": "realizar-una-compra-exitosa;comprar-productos;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 244949000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.Cerrar(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 170011000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "el usuario se encuentra en la página de checkout Your Information",
+            "match": {
+              "location": "TestCompraExitosa3.elUsuarioSeEncuentraEnLaPáginaDeCheckoutYourInformation()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 738615800,
               "status": "passed"
             },
             "line": 12,
+            "name": "el usuario completa todos los campos solicitados de información del cliente",
+            "match": {
+              "location": "TestCompraExitosa3.elUsuarioCompletaTodosLosCamposSolicitadosDeInformaciónDelCliente()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 114237600,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "hace clic en el botón \"Continue\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Continue",
+                  "offset": 23
+                }
+              ],
+              "location": "TestCompraExitosa3.haceClicEnElBotón(String)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 60200,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "el usuario debería ser redirigido a la página de Checkout Overview",
+            "match": {
+              "location": "TestCompraExitosa3.elUsuarioDeberíaSerRedirigidoALaPáginaDeCheckoutOverview()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 44084700,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "el usuario está en la página de Checkout Overview",
+            "match": {
+              "location": "TestCompraExitosa3.elUsuarioEstáEnLaPáginaDeCheckoutOverview()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 149645300,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "el usuario verifica los productos comprados y el total de la compra incluyendo Tax",
+            "match": {
+              "location": "TestCompraExitosa3.elUsuarioVerificaLosProductosCompradosYElTotalDeLaCompraIncluyendoTax()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 97605800,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "hace clic en el boton \"Finish\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Finish",
+                  "offset": 23
+                }
+              ],
+              "location": "TestCompraExitosa3.haceClicEnElBoton(String)"
+            },
+            "matchedColumns": [
+              1
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 54018800,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "la compra se realiza satisfactoriamente",
+            "match": {
+              "location": "TestCompraExitosa3.laCompraSeRealizaSatisfactoriamente()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 29028100,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "el usuario debería ver un mensaje de confirmación de la compra",
+            "match": {
+              "location": "TestCompraExitosa3.elUsuarioDeberíaVerUnMensajeDeConfirmaciónDeLaCompra()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "line": 9,
+            "name": "@browser"
+          }
+        ]
+      }
+    ],
+    "name": "Realizar una compra exitosa",
+    "description": "\r\nComo usuario quiero poder registrarme y agregar un producto para posteriormente poder comprarlo",
+    "id": "realizar-una-compra-exitosa",
+    "keyword": "Feature",
+    "uri": "test3.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 5,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 357839500,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "el usuario debe estar logueado",
+            "match": {
+              "location": "TestLogout4.elUsuarioDebeEstarLogueado()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 3980068300,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.Abrir()"
+            }
+          }
+        ],
+        "line": 9,
+        "name": "Hacer logout estando dentro de mi cuenta",
+        "description": "",
+        "id": "cerrar-sesión-(logout);hacer-logout-estando-dentro-de-mi-cuenta",
+        "after": [
+          {
+            "result": {
+              "duration": 269562500,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.Cerrar(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 104704600,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "el usuario se encuentra dentro de su cuenta",
+            "match": {
+              "location": "TestLogout4.elUsuarioSeEncuentraDentroDeSuCuenta()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2206653000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "el usuario hace clic en el botón Logout",
+            "match": {
+              "location": "TestLogout4.elUsuarioHaceClicEnElBotónLogout()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 59798400,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "el usuario debería ser redirigido a la página de inicio de sesión",
+            "match": {
+              "location": "TestLogout4.elUsuarioDeberíaSerRedirigidoALaPáginaDeInicioDeSesión()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 8,
+            "name": "@browser"
+          }
+        ]
+      }
+    ],
+    "name": "Cerrar sesión (Logout)",
+    "description": "\r\ncomo usuario quiero hacer logout estando dentro de mi cuenta para poder cerrar mi sesion",
+    "id": "cerrar-sesión-(logout)",
+    "keyword": "Feature",
+    "uri": "test4.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 4,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 61348000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "que el usuario está en la página de inicio de sesión",
+            "match": {
+              "location": "TestLoginFail5.queElUsuarioEstáEnLaPáginaDeInicioDeSesión()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 4842098300,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.Abrir()"
+            }
+          }
+        ],
+        "line": 9,
+        "name": "No puedo hacer login por usuario o contrasena incorrecta",
+        "description": "",
+        "id": "iniciar-sesión-fallido;no-puedo-hacer-login-por-usuario-o-contrasena-incorrecta",
+        "after": [
+          {
+            "result": {
+              "duration": 240301100,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.Cerrar(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 251355300,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "el usuario ingresa el nombre de usuario incorrecto o la contrasena incorrecta",
+            "match": {
+              "location": "TestLoginFail5.elUsuarioIngresaElNombreDeUsuarioIncorrectoOLaContrasenaIncorrecta()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 39808100,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "hace clic en el botón Login",
+            "match": {
+              "location": "TestLoginFail5.haceClicEnElBotónLogin()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 47809500,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "el usuario debería ver el mensaje de error \"Epic sadface: Username and password do not match any user in this service\" en rojo.",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Epic sadface: Username and password do not match any user in this service",
+                  "offset": 44
+                }
+              ],
+              "location": "TestLoginFail5.elUsuarioDeberíaVerElMensajeDeErrorEnRojo(String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 8,
+            "name": "@browser"
+          }
+        ]
+      },
+      {
+        "line": 4,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 62693400,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "que el usuario está en la página de inicio de sesión",
+            "match": {
+              "location": "TestLoginFail5.queElUsuarioEstáEnLaPáginaDeInicioDeSesión()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 3411513700,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.Abrir()"
+            }
+          }
+        ],
+        "line": 15,
+        "name": "No puedo hacer login por campo username null",
+        "description": "",
+        "id": "iniciar-sesión-fallido;no-puedo-hacer-login-por-campo-username-null",
+        "after": [
+          {
+            "result": {
+              "duration": 225306300,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.Cerrar(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 247765700,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "el usuario ingresa el nombre de usuario null y la contrasena correcta",
+            "match": {
+              "location": "TestLoginFail5.elUsuarioIngresaElNombreDeUsuarioNullYLaContrasenaCorrecta()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 31929700,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "hace clic en el botón Login por segunda vez",
+            "match": {
+              "location": "TestLoginFail5.haceClicEnElBotónLoginPorSegundaVez()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 45727500,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "el usuario debería ver el mensaje de error Epic sadface: Username is required en rojo.",
+            "match": {
+              "location": "TestLoginFail5.elUsuarioDeberíaVerElMensajeDeErrorEpicSadfaceUsernameIsRequiredEnRojo()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 14,
+            "name": "@browser"
+          }
+        ]
+      },
+      {
+        "line": 4,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 62607100,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "que el usuario está en la página de inicio de sesión",
+            "match": {
+              "location": "TestLoginFail5.queElUsuarioEstáEnLaPáginaDeInicioDeSesión()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 3889727800,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.Abrir()"
+            }
+          }
+        ],
+        "line": 21,
+        "name": "No puedo hacer login por campo password null",
+        "description": "",
+        "id": "iniciar-sesión-fallido;no-puedo-hacer-login-por-campo-password-null",
+        "after": [
+          {
+            "result": {
+              "duration": 276019200,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.Cerrar(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 230855400,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "el usuario ingresa el nombre de usuario correcto y la contrasena null",
+            "match": {
+              "location": "TestLoginFail5.elUsuarioIngresaElNombreDeUsuarioCorrectoYLaContrasenaNull()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 51477200,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "hace clic en el botón Login por tercera vez",
+            "match": {
+              "location": "TestLoginFail5.haceClicEnElBotónLoginPorTerceraVez()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 38948000,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "el usuario debería ver el mensaje de error Epic sadface: Password is required en rojo.",
+            "match": {
+              "location": "TestLoginFail5.elUsuarioDeberíaVerElMensajeDeErrorEpicSadfacePasswordIsRequiredEnRojo()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 20,
+            "name": "@browser"
+          }
+        ]
+      },
+      {
+        "line": 4,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 60051300,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "que el usuario está en la página de inicio de sesión",
+            "match": {
+              "location": "TestLoginFail5.queElUsuarioEstáEnLaPáginaDeInicioDeSesión()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 3483241700,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.Abrir()"
+            }
+          }
+        ],
+        "line": 27,
+        "name": "No puedo hacer login por usuario bloqueado",
+        "description": "",
+        "id": "iniciar-sesión-fallido;no-puedo-hacer-login-por-usuario-bloqueado",
+        "after": [
+          {
+            "result": {
+              "duration": 292426200,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.Cerrar(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 266822700,
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "que el usuario ingresa cuenta bloqueada usuario y clave",
+            "match": {
+              "location": "TestLoginFail5.queElUsuarioIngresaCuentaBloqueadaUsuarioYClave()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 54946300,
+              "status": "passed"
+            },
+            "line": 29,
+            "name": "clic en el boton Login",
+            "match": {
+              "location": "TestLoginFail5.clicEnElBotonLogin()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 51365800,
+              "status": "passed"
+            },
+            "line": 30,
+            "name": "debera haber dentro de la pagina login un mensaje \"Epic sadface: Sorry, this user has been locked out.\" en rojo",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Epic sadface: Sorry, this user has been locked out.",
+                  "offset": 51
+                }
+              ],
+              "location": "TestLoginFail5.deberaHaberDentroDeLaPaginaLoginUnMensajeEnRojo(String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 26,
+            "name": "@browser"
+          }
+        ]
+      }
+    ],
+    "name": "Iniciar sesión Fallido",
+    "description": "Como usuario no puedo loguearme satisfactoriamente y requiero un mensaje como respuesta",
+    "id": "iniciar-sesión-fallido",
+    "keyword": "Feature",
+    "uri": "test5.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 5,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 361342200,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "el usuario esta logueado",
+            "match": {
+              "location": "TestResetApp6.elUsuarioEstaLogueado()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 265309700,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "el usuario ha seleccionado al menos un producto en el carrito",
+            "match": {
+              "location": "TestResetApp6.elUsuarioHaSeleccionadoAlMenosUnProductoEnElCarrito()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 3636765900,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.Abrir()"
+            }
+          }
+        ],
+        "line": 10,
+        "name": "Usuario realiza un reset de la App de compra",
+        "description": "",
+        "id": "resetear-app-de-compra;usuario-realiza-un-reset-de-la-app-de-compra",
+        "after": [
+          {
+            "result": {
+              "duration": 269838000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.Cerrar(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1179063400,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "el usuario realiza un reset de la App de compra",
+            "match": {
+              "location": "TestResetApp6.elUsuarioRealizaUnResetDeLaAppDeCompra()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 37130300,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "el carrito de compra debería estar vacío",
+            "match": {
+              "location": "TestResetApp6.elCarritoDeCompraDeberíaEstarVacío()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 9,
+            "name": "@browser"
+          }
+        ]
+      }
+    ],
+    "name": "Resetear App de compra",
+    "description": "\r\ncomo usuario deseo realizar un reset a mi App de compra para comenzar de nuevo",
+    "id": "resetear-app-de-compra",
+    "keyword": "Feature",
+    "uri": "test6.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 5,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 2383736500,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "que el usuario está logeado",
+            "match": {
+              "location": "TestCookies7.queElUsuarioEstáLogeado()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 4463444500,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "ha seleccionado anteriormente un producto desde la página de inicio",
+            "match": {
+              "location": "TestCookies7.haSeleccionadoAnteriormenteUnProductoDesdeLaPáginaDeInicio()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 3739704300,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.Abrir()"
+            }
+          }
+        ],
+        "line": 11,
+        "name": "Validar que los datos de la cuenta se cargan correctamente a traves de cookies",
+        "description": "",
+        "id": "validar-cookies-y-carga-de-datos-de-cuenta;validar-que-los-datos-de-la-cuenta-se-cargan-correctamente-a-traves-de-cookies",
+        "after": [
+          {
+            "result": {
+              "duration": 1218744000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.Cerrar(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 2327365200,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "el usuario inicia sesión por segunda vez",
+            "match": {
+              "location": "TestCookies7.elUsuarioIniciaSesiónPorSegundaVez()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 83442000,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "todos sus datos de cuenta deben estar cargados correctamente",
+            "match": {
+              "location": "TestCookies7.todosSusDatosDeCuentaDebenEstarCargadosCorrectamente()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 10,
+            "name": "@browser"
+          }
+        ]
+      }
+    ],
+    "name": "Validar cookies y carga de datos de cuenta",
+    "description": "\r\ncomo usuario quiero validar la sesión de mi cuenta para validar si se esta dando correctamnete",
+    "id": "validar-cookies-y-carga-de-datos-de-cuenta",
+    "keyword": "Feature",
+    "uri": "test7.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 5,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 356449300,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "el usuario API está logueado",
+            "match": {
+              "location": "TestCompraExitosaByAPI8.elUsuarioAPIEstáLogueado()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 254258300,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "el usuario API ha agregado al menos un item al carrito",
+            "match": {
+              "location": "TestCompraExitosaByAPI8.elUsuarioAPIHaAgregadoAlMenosUnItemAlCarrito()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 4823004800,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.Abrir()"
+            }
+          }
+        ],
+        "line": 11,
+        "name": "Comprar productos con datos de usuario de una api",
+        "description": "",
+        "id": "realizar-una-compra-exitosa-con-data-usuario-de-api;comprar-productos-con-datos-de-usuario-de-una-api",
+        "after": [
+          {
+            "result": {
+              "duration": 301169300,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.Cerrar(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 155993400,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "el usuario API se encuentra en la página de checkout Your Information",
+            "match": {
+              "location": "TestCompraExitosaByAPI8.elUsuarioAPISeEncuentraEnLaPáginaDeCheckoutYourInformation()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 27700,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "el usuario API completa todos los campos solicitados de información del cliente",
+            "match": {
+              "location": "TestCompraExitosaByAPI8.elUsuarioAPICompletaTodosLosCamposSolicitadosDeInformaciónDelCliente()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 5418554500,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "realiza un request a través del endpoint con id \"1\" para obtener datos del usuario API",
+            "match": {
+              "arguments": [
+                {
+                  "val": "1",
+                  "offset": 49
+                }
+              ],
+              "location": "TestCompraExitosaByAPI8.realizaUnRequestATravésDelEndpointConIdParaObtenerDatosDelUsuarioAPI(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 149684400,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "hace clic en el botón Continue",
+            "match": {
+              "location": "TestCompraExitosaByAPI8.haceClicEnElBotónContinue()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 69500,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "el usuario API debería ser redirigido a la página de Checkout Overview",
+            "match": {
+              "location": "TestCompraExitosaByAPI8.elUsuarioAPIDeberíaSerRedirigidoALaPáginaDeCheckoutOverview()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2036228600,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "el usuario API está en la página de Checkout Overview",
+            "match": {
+              "location": "TestCompraExitosaByAPI8.elUsuarioAPIEstáEnLaPáginaDeCheckoutOverview()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2185530400,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "el usuario API verifica los productos comprados y el total de la compra incluyendo Tax",
+            "match": {
+              "location": "TestCompraExitosaByAPI8.elUsuarioAPIVerificaLosProductosCompradosYElTotalDeLaCompraIncluyendoTax()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 2128808300,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "hace clic en el botón Finish",
+            "match": {
+              "location": "TestCompraExitosaByAPI8.haceClicEnElBotónFinish()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2083238400,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "la compra se realiza Exitosamente",
+            "match": {
+              "location": "TestCompraExitosaByAPI8.laCompraSeRealizaExitosamente()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2060605100,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "el usuario API debería ver un mensaje de confirmación de la compra",
+            "match": {
+              "location": "TestCompraExitosaByAPI8.elUsuarioAPIDeberíaVerUnMensajeDeConfirmaciónDeLaCompra()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "line": 10,
+            "name": "@browser"
+          }
+        ]
+      }
+    ],
+    "name": "Realizar una compra exitosa con data usuario de API",
+    "description": "\r\nComo usuario quiero poder registrarme y agregar un producto para posteriormente poder comprarlo",
+    "id": "realizar-una-compra-exitosa-con-data-usuario-de-api",
+    "keyword": "Feature",
+    "uri": "test8.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 22,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 372686400,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "el usuario BD está logueado",
+            "match": {
+              "location": "TestCompraExitosaByBD9.elUsuarioBDEstáLogueado()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 258113100,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "el usuario BD ha agregado al menos un item al carrito",
+            "match": {
+              "location": "TestCompraExitosaByBD9.elUsuarioBDHaAgregadoAlMenosUnItemAlCarrito()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 3598236800,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.Abrir()"
+            }
+          }
+        ],
+        "line": 28,
+        "name": "Comprar productos con datos de usuario de una BD",
+        "description": "",
+        "id": "realizar-una-compra-exitosa-con-data-usuario-de-base-de-datos-mysql;comprar-productos-con-datos-de-usuario-de-una-bd",
+        "after": [
+          {
+            "result": {
+              "duration": 274774500,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.Cerrar(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 121446200,
+              "status": "passed"
+            },
+            "line": 29,
             "name": "el usuario BD se encuentra en la página de checkout Your Information",
             "match": {
               "location": "TestCompraExitosaByBD9.elUsuarioBDSeEncuentraEnLaPáginaDeCheckoutYourInformation()"
@@ -79,10 +1485,10 @@
           },
           {
             "result": {
-              "duration": 46500,
+              "duration": 32800,
               "status": "passed"
             },
-            "line": 13,
+            "line": 30,
             "name": "el usuario BD completa todos los campos solicitados de información del cliente",
             "match": {
               "location": "TestCompraExitosaByBD9.elUsuarioBDCompletaTodosLosCamposSolicitadosDeInformaciónDelCliente()"
@@ -91,10 +1497,10 @@
           },
           {
             "result": {
-              "duration": 734280400,
+              "duration": 342384700,
               "status": "passed"
             },
-            "line": 14,
+            "line": 31,
             "name": "realiza una consulta a la base de datos a traves de una query para obtener el usuario con id \"1\" para enviar datos del usuario",
             "match": {
               "arguments": [
@@ -109,10 +1515,10 @@
           },
           {
             "result": {
-              "duration": 140512900,
+              "duration": 102877900,
               "status": "passed"
             },
-            "line": 15,
+            "line": 32,
             "name": "hace click en el botón Continue",
             "match": {
               "location": "TestCompraExitosaByBD9.haceClickEnElBotónContinue()"
@@ -121,10 +1527,10 @@
           },
           {
             "result": {
-              "duration": 42700,
+              "duration": 57900,
               "status": "passed"
             },
-            "line": 16,
+            "line": 33,
             "name": "el usuario BD debería ser redirigido a la página de Checkout Overview",
             "match": {
               "location": "TestCompraExitosaByBD9.elUsuarioBDDeberíaSerRedirigidoALaPáginaDeCheckoutOverview()"
@@ -133,10 +1539,10 @@
           },
           {
             "result": {
-              "duration": 54576100,
+              "duration": 49312200,
               "status": "passed"
             },
-            "line": 18,
+            "line": 35,
             "name": "el usuario BD está en la página de Checkout Overview",
             "match": {
               "location": "TestCompraExitosaByBD9.elUsuarioBDEstáEnLaPáginaDeCheckoutOverview()"
@@ -145,10 +1551,10 @@
           },
           {
             "result": {
-              "duration": 147572700,
+              "duration": 108772000,
               "status": "passed"
             },
-            "line": 19,
+            "line": 36,
             "name": "el usuario BD verifica los productos comprados y el total de la compra incluyendo Tax",
             "match": {
               "location": "TestCompraExitosaByBD9.elUsuarioBDVerificaLosProductosCompradosYElTotalDeLaCompraIncluyendoTax()"
@@ -157,10 +1563,10 @@
           },
           {
             "result": {
-              "duration": 70848500,
+              "duration": 103810200,
               "status": "passed"
             },
-            "line": 20,
+            "line": 37,
             "name": "hace click en el botón Finish",
             "match": {
               "location": "TestCompraExitosaByBD9.haceClickEnElBotónFinish()"
@@ -169,10 +1575,10 @@
           },
           {
             "result": {
-              "duration": 51418200,
+              "duration": 67032300,
               "status": "passed"
             },
-            "line": 21,
+            "line": 38,
             "name": "la compra se realiza de manera correcta",
             "match": {
               "location": "TestCompraExitosaByBD9.laCompraSeRealizaDeManeraCorrecta()"
@@ -181,10 +1587,10 @@
           },
           {
             "result": {
-              "duration": 31388800,
+              "duration": 30430400,
               "status": "passed"
             },
-            "line": 22,
+            "line": 39,
             "name": "el usuario BD debería ver un mensaje de confirmación de la compra",
             "match": {
               "location": "TestCompraExitosaByBD9.elUsuarioBDDeberíaVerUnMensajeDeConfirmaciónDeLaCompra()"
@@ -194,18 +1600,14 @@
         ],
         "tags": [
           {
-            "line": 10,
+            "line": 27,
             "name": "@browser"
-          },
-          {
-            "line": 10,
-            "name": "@a"
           }
         ]
       }
     ],
     "name": "Realizar una compra exitosa con data usuario de Base de datos Mysql",
-    "description": "\r\nComo usuario quiero poder registrarme y agregar un producto para posteriormente poder comprarlo",
+    "description": "\r\nDescripción: \r\n\u003cdiv\u003e\r\n\u003cp\u003e\r\n\t\u003cstrong\u003eRealizar una compra exitosa con data usuario de Base de datos Mysql\u003c/strong\u003e:  Como usuario quiero poder \r\n\tregistrarme y agregar un producto para posteriormente poder comprarlo\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\n\t\u003cstrong\u003eResultado esperado\u003c/strong\u003e: Realizo la compra satisfactoriamente\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\n\t\u003cstrong\u003eTipo de característica\u003c/strong\u003e: Data Mysql\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\n\t\u003cstrong\u003eComentarios\u003c/strong\u003e: La prueba cubre operaciones de base de datos de manera exitosa\r\n\u003c/p\u003e\r\n\u003c/div\u003e",
     "id": "realizar-una-compra-exitosa-con-data-usuario-de-base-de-datos-mysql",
     "keyword": "Feature",
     "uri": "test9.feature"
