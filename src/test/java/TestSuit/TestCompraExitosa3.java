@@ -1,14 +1,11 @@
-package SeleniumCode;
+package TestSuit;
 
 import static org.junit.Assert.assertEquals;
-
 import java.io.FileReader;
 import java.sql.ResultSet;
 import java.util.Properties;
-
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
-
 import api.DataApi;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -25,9 +22,10 @@ public class TestCompraExitosa3 extends TestBase  {
 		
 		properties.load(new FileReader("C:\\Users\\PC\\git\\SwagLabsAutomation\\src\\test\\java\\resurces\\config.properties"));
 		
-		driver.findElement(loginPage.getInputUserName()).sendKeys(properties.getProperty("usuario"));			
+		driver.findElement(loginPage.getInputUserName()).sendKeys(properties.getProperty("usuario"));	
+		Thread.sleep(1000);
 	    driver.findElement(loginPage.getInputPassword()).sendKeys(properties.getProperty("contrasena"));
-	    //Thread.sleep(2000);
+	    Thread.sleep(1000);
 		driver.findElement(loginPage.getBotonLogin()).submit();    
 	 
 	}
@@ -36,16 +34,16 @@ public class TestCompraExitosa3 extends TestBase  {
 	public void elUsuarioHaAgregadoAlMenosUnItemAlCarrito() throws Throwable {
 		
 		driver.findElement(homePage.getAgregarProductoCaro()).click();
-	    //Thread.sleep(5000);
+		Thread.sleep(1000);
 	    driver.findElement(homePage.getCarritoLLeno()).click();
-	    //Thread.sleep(5000);
+	    Thread.sleep(1000);
 	}
 
 	@Given("^el usuario se encuentra en la página de checkout Your Information$")
 	public void elUsuarioSeEncuentraEnLaPáginaDeCheckoutYourInformation() throws Throwable {
 		
 		 driver.findElement(cartPage.getBotonCheckout()).click();
-		 //Thread.sleep(2000);
+		 Thread.sleep(1000);
 		 
 		 WebElement tituloPaginaCheckOutInfo = driver.findElement(checkoutYourInformationPage.getTituloCheckoutInfo());
 		 assertEquals(checkoutYourInformationPage.getTituloEsperadoInfo(), tituloPaginaCheckOutInfo.getText());
@@ -53,18 +51,18 @@ public class TestCompraExitosa3 extends TestBase  {
 
 	@When("^el usuario completa todos los campos solicitados de información del cliente$")
 	public void elUsuarioCompletaTodosLosCamposSolicitadosDeInformaciónDelCliente() throws Throwable {
-		//String scenario ="rewardscard";
+		
 		ResultSet rs = DataBaseConetion.getCredentials();
 				
 		while(rs.next()) {
-				//Thread.sleep(2000);
-				driver.findElement(checkoutYourInformationPage.getInputFirstName()).sendKeys(rs.getString("username"));		
-				System.out.println(rs.getString("username"));
+				Thread.sleep(1000);
+				driver.findElement(checkoutYourInformationPage.getInputFirstName()).sendKeys(rs.getString("username"));	
+				Thread.sleep(1000);
 				driver.findElement(checkoutYourInformationPage.getInputLastName()).sendKeys(rs.getString("password"));
-				System.out.println(rs.getString("password"));
+				Thread.sleep(1000);
 				driver.findElement(checkoutYourInformationPage.getInputZipName()).sendKeys(properties.getProperty("zip"));	
 				
-				//Thread.sleep(2000);			
+				Thread.sleep(1000);			
 		}
 		rs.close();				
 	}
@@ -73,26 +71,21 @@ public class TestCompraExitosa3 extends TestBase  {
 	public void haceClicEnElBotón(String botonCheckoutContinue) throws Throwable {
 		
 		WebElement botonContinue = driver.findElement(checkoutYourInformationPage.getBotonContinue());
-		Assert.assertNotNull(botonContinue);
-		
+		Assert.assertNotNull(botonContinue);		
 		botonContinue.click();
-		//Thread.sleep(2000);
-	    
+		Thread.sleep(1000);	    
 	}
 
 	@Then("^el usuario debería ser redirigido a la página de Checkout Overview$")
 	public void elUsuarioDeberíaSerRedirigidoALaPáginaDeCheckoutOverview() throws Throwable {
-		
-		
+			
 	}
 
 	@Given("^el usuario está en la página de Checkout Overview$")
 	public void elUsuarioEstáEnLaPáginaDeCheckoutOverview() throws Throwable {
 		
 		WebElement paginaOverview = driver.findElement(checkoutOverviewPage.getTituloCheckoutOverview());
-	    Assert.assertEquals(checkoutOverviewPage.getTituloEsperadoOverview(), paginaOverview.getText());
-	    
-	  
+	    Assert.assertEquals(checkoutOverviewPage.getTituloEsperadoOverview(), paginaOverview.getText());	  	  
 	}
 
 	@When("^el usuario verifica los productos comprados y el total de la compra incluyendo Tax$")
@@ -120,11 +113,10 @@ public class TestCompraExitosa3 extends TestBase  {
 	}
 	
 	@When("^hace clic en el boton \"([^\"]*)\"$")
-	public void haceClicEnElBoton(String botonFinishData)throws Throwable {
+	public void haceClicEnElBoton(String botonFinishData)throws Throwable {	
 		
 		driver.findElement(checkoutOverviewPage.getBotonFinish()).click();
-		//Thread.sleep(2000);
-		
+		Thread.sleep(1000);		
 	}
 
 	@Then("^la compra se realiza satisfactoriamente$")
@@ -132,7 +124,7 @@ public class TestCompraExitosa3 extends TestBase  {
 		
 		WebElement compraExitosa = driver.findElement(checkoutComplete.getTituloFinish());
 		Assert.assertEquals(checkoutComplete.getTituloEsperadoFinish(), compraExitosa.getText());
-		//Thread.sleep(2000);
+		Thread.sleep(1000);
 	}
 
 	@Then("^el usuario debería ver un mensaje de confirmación de la compra$")
@@ -140,7 +132,7 @@ public class TestCompraExitosa3 extends TestBase  {
 		
 		WebElement mensajeConfirmacion = driver.findElement(checkoutComplete.getTextoConfirmacion());
 		Assert.assertEquals(checkoutComplete.getTextoEsperadoComplet(), mensajeConfirmacion.getText());
-		//Thread.sleep(2000);
+		Thread.sleep(1000);
 	}
 
 }

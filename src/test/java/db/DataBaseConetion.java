@@ -16,9 +16,8 @@ public class DataBaseConetion {
     private static Connection getConnection() throws SQLException {
         return DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
     }
-
-    public static ResultSet obtenerUsuarioById(int id) throws SQLException {
-    	
+    
+    public static ResultSet obtenerUsuarioById(int id) throws SQLException {	
         try {
         	Connection con = getConnection();
             PreparedStatement preparedStatement = con.prepareStatement("SELECT * FROM Employeeinfo WHERE id = ?");
@@ -31,8 +30,7 @@ public class DataBaseConetion {
         }
     }
 
-    public static ResultSet getCredentials() throws SQLException {
-    	
+    public static ResultSet getCredentials() throws SQLException {	
         try {
         	Connection con = getConnection();
             Statement statement = con.createStatement();
@@ -41,9 +39,6 @@ public class DataBaseConetion {
         } catch (SQLException e) {
             e.printStackTrace();
             throw e;
-        }
-    	
-	
-    	
+        } 	
     }
 }

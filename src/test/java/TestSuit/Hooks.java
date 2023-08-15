@@ -1,4 +1,4 @@
-package SeleniumCode;
+package TestSuit;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -44,8 +44,7 @@ public class Hooks {
 		driver.get(properties.getProperty("url_base")); // es lo mismo que poner https://www.imalittletester.com/
 		driver.manage().window().maximize();
 	}
-	
-	
+		
 	@After("@browser")
 	public void Cerrar(Scenario scenario) {
 		// tomando ss si falla
@@ -57,7 +56,6 @@ public class Hooks {
 		LOGGER.log(Level.INFO, "El escenario nro : " + numberofCase + " se ejecuto correctamente y se cerro.");
 		driverManager.quitDriver();		
 	}
-
 	public static WebDriver getDriver() {	
 		return driver;
 	}

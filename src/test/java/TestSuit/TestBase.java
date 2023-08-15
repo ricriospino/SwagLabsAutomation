@@ -1,4 +1,4 @@
-package SeleniumCode;
+package TestSuit;
 
 import org.openqa.selenium.WebDriver;
 

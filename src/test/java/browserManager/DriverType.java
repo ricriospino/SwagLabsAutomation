@@ -1,9 +1,7 @@
 package browserManager;
 
-public enum DriverType {
-	
+public enum DriverType {	
 	CHROME,
 	FIREFOX,
 	EDGE,
-
 }

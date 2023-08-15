@@ -2,7 +2,6 @@ package browserManager;
 
 import junit.textui.TestRunner;
 import utils.Logs;
-
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -28,8 +27,7 @@ public class DriverManagerFactory {
 		default:
 				LOGGER.log(Level.WARNING, "Invalid browser selected");			
 			break;
-		}
-		
+		}	
 		return driverManager;
 	}
 

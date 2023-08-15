@@ -8,8 +8,6 @@ public class ChromeDriverManager extends DriverManager {
 	protected void createDriver() {
 		
 		System.setProperty("webdriver.chrome.driver","D:\\CursoJava\\workspace_seleniumUdemy\\LabMontAutomatizado\\src\\test\\java\\resurces\\chromedriver.exe");	
-		driver = new ChromeDriver();
-		
+		driver = new ChromeDriver();	
 	}
-
 }

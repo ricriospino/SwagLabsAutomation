@@ -5,10 +5,8 @@ import org.openqa.selenium.WebDriver;
 public abstract class DriverManager {
 	
 	protected WebDriver driver;
-	
 	protected abstract void createDriver();
-	
-	
+		
 	// si driver no es null cierra
 	public void quitDriver() {
 		
@@ -18,13 +16,11 @@ public abstract class DriverManager {
 			driver = null;
 		}
 	}
-	
 	// si driver es null crea driver
 	public WebDriver getDriver() {
 		if(driver == null) {
 			createDriver();
 		}
-		
 		return driver;
 	}
 

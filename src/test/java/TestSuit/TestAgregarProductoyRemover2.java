@@ -1,11 +1,9 @@
-package SeleniumCode;
+package TestSuit;
 
 import java.io.FileReader;
 import java.util.Properties;
-
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
-
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -24,8 +22,10 @@ public class TestAgregarProductoyRemover2 extends TestBase {
 		Properties properties = new Properties();
 		properties.load(new FileReader("C:\\Users\\PC\\git\\SwagLabsAutomation\\src\\test\\java\\resurces\\config.properties"));
 		
-		driver.findElement(loginPage.getInputUserName()).sendKeys(properties.getProperty("usuario"));			
+		driver.findElement(loginPage.getInputUserName()).sendKeys(properties.getProperty("usuario"));
+		Thread.sleep(1000);
 	    driver.findElement(loginPage.getInputPassword()).sendKeys(properties.getProperty("contrasena"));
+	    Thread.sleep(1000);
 		driver.findElement(loginPage.getBotonLogin()).submit();    
 	}
 
@@ -39,10 +39,10 @@ public class TestAgregarProductoyRemover2 extends TestBase {
 
 	@When("^busco el producto de mayor valor$")
 	public void buscoElProductoDeMayorValor() throws Throwable {
-		//Thread.sleep(5000);
+		Thread.sleep(1000);
 		WebElement dropDownListElement = driver.findElement(homePage.getDropDwnList());
 		dropDownListElement.click();
-		//Thread.sleep(5000);
+		Thread.sleep(1000);
 		
 		WebElement productoEsperado = driver.findElement(homePage.getProductoMayorValorname());
 		Assert.assertEquals(homePage.getProductoMayorValorEsperado(), productoEsperado.getText());
@@ -53,7 +53,7 @@ public class TestAgregarProductoyRemover2 extends TestBase {
 	public void hagoClicEnElBotónDeAgregarAlCarrito() throws Throwable {
 		
 		driver.findElement(homePage.getAgregarProductoCaro()).click();
-	    //Thread.sleep(2000);
+		Thread.sleep(1000);
 	}
 
 	@Then("^el logo carrito de la parte superior debera tener un numero$")
@@ -73,7 +73,7 @@ public class TestAgregarProductoyRemover2 extends TestBase {
 	public void verificarEnLaPaginaCartSiElProductoSeAgregoCorrectamente() throws Throwable {
 		
 		driver.findElement(homePage.getCarritoLLeno()).click();
-		//Thread.sleep(2000);
+		Thread.sleep(1000);
 		WebElement productoCarrito = driver.findElement(cartPage.getProductoMayorSeleccionado());
 		Assert.assertEquals(cartPage.getProductoEsperadoCarrito(), productoCarrito.getText());
 
@@ -84,7 +84,7 @@ public class TestAgregarProductoyRemover2 extends TestBase {
 	public void elUsuarioDecideRemoverElProductoDelCarrito() throws Throwable {
 		
 		driver.findElement(cartPage.getRemoverProductoMayor()).click();
-		//Thread.sleep(3000);
+		Thread.sleep(1000);
 	}
 
 	@Then("^verificar si el producto se removio exitosamente$")

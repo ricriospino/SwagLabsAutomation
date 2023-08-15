@@ -1,13 +1,11 @@
-package SeleniumCode;
+package TestSuit;
 
 import java.io.FileReader;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Properties;
-
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
-
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -20,10 +18,11 @@ public class TestCompraExitosaByBD9 extends TestBase  {
 	@Given("^el usuario BD está logueado$")
 	public void elUsuarioBDEstáLogueado() throws Throwable {
 		
-		properties.load(new FileReader("C:\\Users\\PC\\git\\SwagLabsAutomation\\src\\test\\java\\resurces\\config.properties"));
-		
-		driver.findElement(loginPage.getInputUserName()).sendKeys(properties.getProperty("usuario"));			
+		properties.load(new FileReader("C:\\Users\\PC\\git\\SwagLabsAutomation\\src\\test\\java\\resurces\\config.properties"));		
+		driver.findElement(loginPage.getInputUserName()).sendKeys(properties.getProperty("usuario"));	
+		Thread.sleep(1000);
 	    driver.findElement(loginPage.getInputPassword()).sendKeys(properties.getProperty("contrasena"));
+	    Thread.sleep(1000);
 	    driver.findElement(loginPage.getBotonLogin()).submit(); 
 	    
 	}
@@ -32,20 +31,20 @@ public class TestCompraExitosaByBD9 extends TestBase  {
 	public void elUsuarioBDHaAgregadoAlMenosUnItemAlCarrito() throws Throwable {
 		
 		driver.findElement(homePage.getAgregarProductoCaro()).click();
+		Thread.sleep(1000);
 		driver.findElement(homePage.getCarrito()).click();
-	   
+		Thread.sleep(1000);
 	}
 
 	@Given("^el usuario BD se encuentra en la página de checkout Your Information$")
 	public void elUsuarioBDSeEncuentraEnLaPáginaDeCheckoutYourInformation() throws Throwable {
 	   
 		driver.findElement(cartPage.getBotonCheckout()).click();
+		Thread.sleep(1000);
 	}
 
 	@When("^el usuario BD completa todos los campos solicitados de información del cliente$")
-	public void elUsuarioBDCompletaTodosLosCamposSolicitadosDeInformaciónDelCliente() throws Throwable {
-	  
-		
+	public void elUsuarioBDCompletaTodosLosCamposSolicitadosDeInformaciónDelCliente() throws Throwable {  	
 	}
 
 	@When("^realiza una consulta a la base de datos a traves de una query para obtener el usuario con id \"([^\"]*)\" para enviar datos del usuario$")
@@ -56,8 +55,11 @@ public class TestCompraExitosaByBD9 extends TestBase  {
 			ResultSet usuarioBD = DataBaseConetion.obtenerUsuarioById(Integer.parseInt(id));
 			while (usuarioBD.next()) {
 				driver.findElement(checkoutYourInformationPage.getInputFirstName()).sendKeys(usuarioBD.getString("name"));
+				Thread.sleep(1000);
 				driver.findElement(checkoutYourInformationPage.getInputLastName()).sendKeys(usuarioBD.getString("location"));
-				driver.findElement(checkoutYourInformationPage.getInputZipName()).sendKeys(usuarioBD.getString("age"));				
+				Thread.sleep(1000);
+				driver.findElement(checkoutYourInformationPage.getInputZipName()).sendKeys(usuarioBD.getString("age"));			
+				Thread.sleep(1000);
 			}			
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -68,14 +70,11 @@ public class TestCompraExitosaByBD9 extends TestBase  {
 	public void haceClickEnElBotónContinue() throws Throwable {
 		
 		driver.findElement(checkoutYourInformationPage.getBotonContinue()).click();
-	  
+		Thread.sleep(1000);  
 	}
 
 	@Then("^el usuario BD debería ser redirigido a la página de Checkout Overview$")
-	public void elUsuarioBDDeberíaSerRedirigidoALaPáginaDeCheckoutOverview() throws Throwable {
-		
-		
-	   
+	public void elUsuarioBDDeberíaSerRedirigidoALaPáginaDeCheckoutOverview() throws Throwable {		   
 	}
 
 	@Given("^el usuario BD está en la página de Checkout Overview$")
@@ -108,13 +107,14 @@ public class TestCompraExitosaByBD9 extends TestBase  {
 		}else {
 			Assert.assertTrue("La suma no es la correcta",false);
 		}
-	  
+		Thread.sleep(1000);
 	}
 
 	@When("^hace click en el botón Finish$")
 	public void haceClickEnElBotónFinish() throws Throwable {
 		
 		driver.findElement(checkoutOverviewPage.getBotonFinish()).click();
+		Thread.sleep(1000);
 	
 	}
 
@@ -123,7 +123,7 @@ public class TestCompraExitosaByBD9 extends TestBase  {
 		
 		WebElement compraExitosa = driver.findElement(checkoutComplete.getTituloFinish());
 		Assert.assertEquals(checkoutComplete.getTituloEsperadoFinish(), compraExitosa.getText());
-	    
+		Thread.sleep(1000);
 	}
 
 	@Then("^el usuario BD debería ver un mensaje de confirmación de la compra$")
@@ -131,7 +131,7 @@ public class TestCompraExitosaByBD9 extends TestBase  {
 		
 		WebElement mensajeConfirmacion = driver.findElement(checkoutComplete.getTextoConfirmacion());
 		Assert.assertEquals(checkoutComplete.getTextoEsperadoComplet(), mensajeConfirmacion.getText());
-	   
+		Thread.sleep(1000);
 	}
 
 }
