@@ -6,7 +6,8 @@ public class EdgeDriverManager extends DriverManager {
 
 	@Override
 	protected void createDriver() {	
-		System.setProperty("webdriver.edge.driver","D:\\CursoJava\\workspace_seleniumUdemy\\LabMontAutomatizado\\src\\test\\java\\resurces\\msedgedriver.exe");	
+		System.setProperty("webdriver.edge.driver","C:\\Users\\PC\\git\\SwagLabsAutomation\\src\\test\\java\\resurces\\msedgedriver.exe");	
 		driver = new EdgeDriver();
+		
 	}
 }
