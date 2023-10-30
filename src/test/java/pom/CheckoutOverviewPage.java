@@ -3,6 +3,8 @@ package pom;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import lombok.Data;
+@Data
 public class CheckoutOverviewPage extends BasePageElement {
 	
 	private By tituloCheckoutOverview = By.className("header_secondary_container");
@@ -14,33 +16,7 @@ public class CheckoutOverviewPage extends BasePageElement {
 	private By tax = By.className("summary_tax_label");
 	private By TotalFinal =By.xpath("//div[@class='summary_info_label summary_total_label']");
 
-	public By getItemTotal() {
-		return itemTotal;
-	}
 
-	public By getTax() {
-		return tax;
-	}
-
-	public By getTotalFinal() {
-		return TotalFinal;
-	}
-
-	public By getBotonFinish() {
-		return botonFinish;
-	}
-
-	public By getExisteProductos() {
-		return existeProductos;
-	}
-
-	public By getTituloCheckoutOverview() {
-		return tituloCheckoutOverview;
-	}
-
-	public String getTituloEsperadoOverview() {
-		return tituloEsperadoOverview;
-	}
 
 	public CheckoutOverviewPage(WebDriver driver) {
 		super(driver);

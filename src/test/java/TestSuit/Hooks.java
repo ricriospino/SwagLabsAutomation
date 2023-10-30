@@ -37,7 +37,7 @@ public class Hooks {
 		properties.load(new FileReader("C:\\Users\\PC\\git\\SwagLabsAutomation\\src\\test\\java\\resurces\\config.properties"));
 		
 		numberofCase++;
-		driverManager = DriverManagerFactory.getManager(DriverType.CHROME); 
+		driverManager = DriverManagerFactory.getManager(DriverType.EDGE); 
 		driver = driverManager.getDriver();
 		
 		LOGGER.log(Level.INFO, "Se esta ejecutando el escenario nro: " + numberofCase);

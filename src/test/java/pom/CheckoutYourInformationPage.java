@@ -3,6 +3,9 @@ package pom;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import lombok.Data;
+
+@Data
 public class CheckoutYourInformationPage extends BasePageElement{
 
 	private By inputFirstName = By.id("first-name");
@@ -13,34 +16,6 @@ public class CheckoutYourInformationPage extends BasePageElement{
 	
 	private String botonesperadoContinue = "Continue";
 	private String tituloEsperadoInfo ="Checkout: Your Information";
-
-	public By getInputFirstName() {
-		return inputFirstName;
-	}
-
-	public By getInputLastName() {
-		return inputLastName;
-	}
-
-	public By getInputZipName() {
-		return inputZipName;
-	}
-
-	public By getBotonContinue() {
-		return botonContinue;
-	}
-
-	public By getTituloCheckoutInfo() {
-		return tituloCheckoutInfo;
-	}
-
-	public String getBotonesperadoContinue() {
-		return botonesperadoContinue;
-	}
-
-	public String getTituloEsperadoInfo() {
-		return tituloEsperadoInfo;
-	}
 
 	public CheckoutYourInformationPage(WebDriver driver) {
 		super(driver);

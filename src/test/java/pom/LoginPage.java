@@ -3,6 +3,9 @@ package pom;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import lombok.Data;
+
+@Data
 public class LoginPage extends BasePageElement {
 	
 	private String tituloEsperado ="Swag Labs";
@@ -20,51 +23,7 @@ public class LoginPage extends BasePageElement {
 	private String usuarioIncorrecto ="standard_use";
 	private String passwordIncorrecto ="12324dd";
 	
-	
 
-	public String getUsuarioIncorrecto() {
-		return usuarioIncorrecto;
-	}
-
-	public String getPasswordIncorrecto() {
-		return passwordIncorrecto;
-	}
-
-	public By getMessageError() {
-		return messageError;
-	}
-
-	public String getMensajeError() {
-		return mensajeError;
-	}
-
-	public String getMensajeUserNull() {
-		return mensajeUserNull;
-	}
-
-	public String getMensajePasswordNull() {
-		return mensajePasswordNull;
-	}
-
-	public String getTituloEsperado() {
-		return tituloEsperado;
-	}
-
-	public By getTitulo() {
-		return titulo;
-	}
-
-	public By getInputUserName() {
-		return inputUserName;
-	}
-
-	public By getInputPassword() {
-		return inputPassword;
-	}
-
-	public By getBotonLogin() {
-		return botonLogin;
-	}
 
 	public LoginPage(WebDriver driver) {
 		super(driver);

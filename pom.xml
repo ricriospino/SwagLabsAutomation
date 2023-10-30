@@ -71,8 +71,13 @@
 	    <artifactId>json</artifactId>
 	    <version>20230227</version>
 	</dependency>
-	
-	
-    
+	<dependency>
+	    <groupId>org.projectlombok</groupId>
+	    <artifactId>lombok</artifactId>
+	    <version>1.18.22</version> <!-- Asegúrate de verificar la última versión en el repositorio de Maven -->
+	    <scope>provided</scope>
+	</dependency>
+
   </dependencies>
+ 
 </project>
